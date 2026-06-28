@@ -1,0 +1,21 @@
+[package]
+edition      = "2024"
+name         = "async-hello-world"
+rust-version = "1.88"
+version      = "0.1.0"
+
+[[bin]]
+name = "async-hello-world"
+path = "./src/main.rs"
+
+[dependencies]
+esp-hal = { workspace = true }
+esp-bootloader-esp-idf.workspace = true
+
+critical-section = { workspace = true }
+
+esp-println = { workspace = true }
+esp-backtrace = { workspace = true }
+embassy-executor = { workspace = true }
+embassy-time = { workspace = true }
+esp-rtos = { workspace = true }

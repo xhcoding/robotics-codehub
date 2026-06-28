@@ -1,0 +1,30 @@
+[package]
+edition      = "2024"
+name         = "async-access-point"
+rust-version = "1.88"
+version      = "0.1.0"
+
+[[bin]]
+name = "async-access-point"
+path = "./src/main.rs"
+
+[dependencies]
+esp-hal = { workspace = true }
+esp-bootloader-esp-idf = { workspace = true }
+critical-section = { workspace = true }
+esp-println = { workspace = true }
+esp-backtrace = { workspace = true }
+embassy-executor = { workspace = true }
+embassy-time = { workspace = true }
+esp-rtos = {version="0.3.0", features=["esp32", "embassy", "log-04", "esp-radio"]}
+embedded-io-async ={ workspace = true }
+static_cell = { workspace = true }
+embassy-sync = { workspace = true }
+reqwless = { workspace = true }
+enumset = { workspace = true }
+esp-radio = { workspace = true }
+esp-alloc = { workspace = true }
+edge-dhcp = "0.7.0"
+edge-nal = "0.6.0"
+edge-nal-embassy = "0.8.1"
+embassy-net = { workspace = true }
