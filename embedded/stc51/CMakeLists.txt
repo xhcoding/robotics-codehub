@@ -50,3 +50,6 @@ add_51_target(blink_led led/blink_led.c)
 add_51_target(chaser_led led/chaser_led.c)
 
 add_51_target(check_key key/check_key.c)
+add_51_target(number_key key/number_key.c)
+
+add_51_target(single_digital_tube digital_tube/single_digital_tube.c)
