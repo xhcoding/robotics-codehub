@@ -1,5 +1,20 @@
 #include <mcs51/8051.h>
 #include <stdbool.h>
+#include <mcs51/compiler.h>
+
+void delay500Ms() { // 12.000Mhz 软件延时 500 ms
+    unsigned char i, j, k;
+    NOP();
+    i = 4;
+    j = 205;
+    k = 187;
+    do {
+        do {
+            while (--k);
+        } while (--j);
+
+    } while (--i);
+}
 
 // 开关指定位置的灯
 void toggleLed(unsigned int i, bool is_on) {

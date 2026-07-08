@@ -53,3 +53,13 @@ add_51_target(check_key key/check_key.c)
 add_51_target(number_key key/number_key.c)
 
 add_51_target(single_digital_tube digital_tube/single_digital_tube.c)
+add_51_target(multi_digital_tube digital_tube/multi_digital_tube.c)
+
+add_51_target(test_lcd1602 lcd1602/lcd1602.c lcd1602/test_lcd1602.c)
+
+include_directories(lcd1602)
+
+add_51_target(check_matrix_key lcd1602/lcd1602.c matrix_key/check_matrix_key.c)
+
+add_51_target(clock_timer lcd1602/lcd1602.c timer/clock_timer.c)
+
