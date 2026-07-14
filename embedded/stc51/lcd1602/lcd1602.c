@@ -120,3 +120,20 @@ void LCD_showNumber(unsigned char row, unsigned char col, int num, unsigned char
         }
     }
 }
+
+void LCD_showFixNumber(unsigned char row, unsigned char col, int num, unsigned char base, unsigned fix_len) {
+    LCD_setCursor(row, col);
+    if (num < 0) {
+        LCD_writeData('-');
+        num = -num;
+    }
+
+    for (unsigned char i = fix_len; i > 0; i--) {
+        unsigned char n = (num / LCD_pow(base, i - 1) % base);
+        if (n < 10) {
+            LCD_writeData(n + '0');
+        } else {
+            LCD_writeData(n - 10 + 'A');
+        }
+    }
+}

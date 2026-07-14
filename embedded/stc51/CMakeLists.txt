@@ -63,3 +63,12 @@ add_51_target(check_matrix_key lcd1602/lcd1602.c matrix_key/check_matrix_key.c)
 
 add_51_target(clock_timer lcd1602/lcd1602.c timer/clock_timer.c)
 
+add_51_target(uart_send uart/uart_send.c)
+
+include_directories(uart)
+
+add_51_target(uart_recv uart/uart_recv.c uart/uart.c lcd1602/lcd1602.c)
+
+add_51_target(matrix_led matrix_led/matrix_led.c)
+
+add_51_target(ds1302 ds1302/ds1302.c lcd1602/lcd1602.c)
