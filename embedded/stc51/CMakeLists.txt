@@ -72,3 +72,10 @@ add_51_target(uart_recv uart/uart_recv.c uart/uart.c lcd1602/lcd1602.c)
 add_51_target(matrix_led matrix_led/matrix_led.c)
 
 add_51_target(ds1302 ds1302/ds1302.c lcd1602/lcd1602.c)
+
+add_51_target(buzzer_music buzzer/buzzer_music.c)
+
+include_directories(i2c)
+include_directories(at24c02)
+
+add_51_target(storage_data i2c/i2c.c at24c02/at24c02.c lcd1602/lcd1602.c at24c02/storage_data.c)

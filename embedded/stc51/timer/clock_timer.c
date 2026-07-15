@@ -76,19 +76,6 @@ void timer0Init() {
     PT0 = 0;  // 设为低优先级（默认值，此处显式设置确保明确）
 }
 
-void timer0Init() {
-    // 配置工作模式
-    TMOD = TMOD & 0xF0;  // 0000  0001
-    TMOD = TMOD | 0x01;
-    TF0 = 0;
-    TR0 = 1;
-    TH0 = 64615 / 256;
-    TL0 = 64615 % 256;
-    ET0 = 1;
-    EA = 1;
-    PT0 = 0;
-}
-
 static unsigned int g_count = 0;
 static unsigned int g_hour = 0;
 static unsigned int g_min = 0;
