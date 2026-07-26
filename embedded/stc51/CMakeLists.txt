@@ -83,3 +83,7 @@ add_51_target(storage_data i2c/i2c.c at24c02/at24c02.c lcd1602/lcd1602.c at24c02
 include_directories(one_wire)
 include_directories(ds18b20)
 add_51_target(ds18b20_read lcd1602/lcd1602.c one_wire/one_wire.c ds18b20/ds18b20.c ds18b20/ds18b20_read.c)
+
+add_51_target(breath_led pwm/breath_led.c)
+
+add_51_target(dc_motor pwm/dc_motor.c)
