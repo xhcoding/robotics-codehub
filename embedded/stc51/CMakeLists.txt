@@ -87,3 +87,7 @@ add_51_target(ds18b20_read lcd1602/lcd1602.c one_wire/one_wire.c ds18b20/ds18b20
 add_51_target(breath_led pwm/breath_led.c)
 
 add_51_target(dc_motor pwm/dc_motor.c)
+include_directories(adda)
+add_51_target(adda lcd1602/lcd1602.c adda/xpt2046.c adda/adda.c)
+
+add_51_target(remote lcd1602/lcd1602.c remote/remote.c)
