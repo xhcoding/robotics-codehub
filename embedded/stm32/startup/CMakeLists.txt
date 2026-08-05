@@ -1,4 +1,4 @@
-add_library(stm32_startup OBJECT)
+add_library(stm32_startup)
 target_sources(stm32_startup PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}/startup_stm32f103xb.s
   ${CMAKE_CURRENT_SOURCE_DIR}/system_stm32f1xx.c

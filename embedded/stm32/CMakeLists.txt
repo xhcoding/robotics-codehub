@@ -24,4 +24,6 @@ add_subdirectory(drivers)
 
 add_subdirectory(startup)
 
+add_subdirectory(common)
+
 add_subdirectory(apps)
