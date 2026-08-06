@@ -1,5 +1,6 @@
-((c++-ts-mode . ((eglot-server-programs . ((c++-mode . ("clangd"
+((c++-ts-mode . ((eglot-server-programs . (((c-ts-mode c++-ts-mode) . ("clangd"
                                                         "--clang-tidy"
                                                         "--header-insertion=never"
                                                         "--completion-style=detailed"
-                                                        "--query-driver=arm-none-eabi-g++")))))))
+                                                        "--query-driver=/usr/bin/arm-none-eabi-g++"
+                                                        )))))))

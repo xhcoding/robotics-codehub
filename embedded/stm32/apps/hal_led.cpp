@@ -1,5 +1,7 @@
+#include <array>
+
+#include "component/led.hpp"
 #include "system/system.hpp"
-#include "peripheral/gpio.hpp"
 
 using namespace stm32;
 using namespace std::chrono_literals;
@@ -8,12 +10,20 @@ int main()
 {
     System::init();
 
-    auto gpioc_13 = Gpio(Gpio::Group::C, 13);
-    gpioc_13.configure(Gpio::Mode::OUTPUT_PP, Gpio::Speed::LOW, Gpio::Pull::NO);
+    // 流水 LED 灯
+    std::array<Led, 3> leds = {
+            Led(Gpio::Group::C, 13, Led::ActiveMode::LOW),
+            Led(Gpio::Group::A, 0, Led::ActiveMode::LOW),
+            Led(Gpio::Group::A, 2, Led::ActiveMode::LOW),
+    };
 
     while (true) {
-        gpioc_13.toggle();
-        System::delay(5s);
+        for (auto& led : leds) {
+            led.on();
+            System::delay(1s);
+            led.off();
+            System::delay(1s);
+        }
     }
 
     return 0;
