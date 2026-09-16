@@ -10,3 +10,8 @@ add_stm32_executable(hal_led
     SOURCES hal_led.cpp
     LINK_LIBS stm32_common
 )
+
+add_stm32_executable(key_led
+    SOURCES key_led.cpp
+    LINK_LIBS stm32_common
+)

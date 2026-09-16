@@ -10,6 +10,8 @@ public:
     static bool init();
 
     static void delay(std::chrono::milliseconds ms);
+
+    static std::chrono::milliseconds now();
 };
 
 }  // namespace stm32_common

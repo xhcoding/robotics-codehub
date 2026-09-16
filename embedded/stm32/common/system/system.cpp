@@ -45,6 +45,11 @@ void System::delay(std::chrono::milliseconds ms)
     HAL_Delay(ms.count());
 }
 
+std::chrono::milliseconds System::now()
+{
+    return std::chrono::milliseconds(HAL_GetTick());
+}
+
 }  // namespace stm32
 
 // 系统中断函数实现
