@@ -23,6 +23,12 @@ function(add_stm32_executable TARGET_NAME)
     add_executable(${TARGET_NAME} ${STM32_ARG_SOURCES})
 
     # ----- 2. 链接库（使用 PRIVATE）-----
+    # 链接顺序：startup 必须在 common 之前 ——
+    # 向量表（startup）引用 TIMx_IRQHandler，其强定义在
+    # libstm32_common.a(peripheral/tim.cpp) 中；若 common 先被扫描，
+    # 引用无法回补解析（归档单遍扫描）。
+    list(REMOVE_ITEM STM32_ARG_LINK_LIBS stm32_startup)
+    list(PREPEND STM32_ARG_LINK_LIBS stm32_startup)
     if(STM32_ARG_LINK_LIBS)
         target_link_libraries(${TARGET_NAME} PRIVATE ${STM32_ARG_LINK_LIBS})
     endif()

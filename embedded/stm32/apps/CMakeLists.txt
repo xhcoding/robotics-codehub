@@ -3,7 +3,7 @@ list(REMOVE_ITEM CMAKE_C_IMPLICIT_LINK_LIBRARIES ob)
 
 add_stm32_executable(reg_led
     SOURCES reg_led.cpp
-    LINK_LIBS stm32_startup
+    LINK_LIBS stm32_common
 )
 
 add_stm32_executable(hal_led
@@ -13,5 +13,10 @@ add_stm32_executable(hal_led
 
 add_stm32_executable(key_led
     SOURCES key_led.cpp
+    LINK_LIBS stm32_common
+)
+
+add_stm32_executable(tim_demo
+    SOURCES tim_demo.cpp
     LINK_LIBS stm32_common
 )

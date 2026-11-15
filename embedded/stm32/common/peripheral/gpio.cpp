@@ -32,6 +32,12 @@ void Gpio::configure(Mode mode, Speed speed, Pull pull)
     case Mode::OUTPUT_OD:
         gpio_cfg.Mode = GPIO_MODE_OUTPUT_OD;
         break;
+    case Mode::OUTPUT_AF_PP:
+        gpio_cfg.Mode = GPIO_MODE_AF_PP;
+        break;
+    case Mode::OUTPUT_AF_OD:
+        gpio_cfg.Mode = GPIO_MODE_AF_OD;
+        break;
     }
 
     switch (speed) {

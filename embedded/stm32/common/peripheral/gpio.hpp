@@ -13,6 +13,8 @@ public:
         INPUT,
         OUTPUT_PP,
         OUTPUT_OD,
+        OUTPUT_AF_PP,
+        OUTPUT_AF_OD,
     };
     enum class Speed { LOW, MEDIUM, HIGH };
 
