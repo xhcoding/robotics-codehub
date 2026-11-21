@@ -13,8 +13,8 @@ target_sources(stm32_common PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}/component/led.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/component/key.cpp
 
-  ${CMAKE_CURRENT_SOURCE_DIR}/debug/fmt.cpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/debug/dbg.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/dbg/fmt.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/dbg/dbg.cpp
 )
 
 # 调试打印等级（0=彻底编译掉 1=E 2=W 3=I 4=V）；Debug 默认全开，Release 默认只留 E/W

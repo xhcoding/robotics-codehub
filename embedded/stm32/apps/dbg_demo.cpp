@@ -10,7 +10,7 @@
 #include <span>
 
 #include "component/led.hpp"
-#include "debug/dbg.hpp"
+#include "dbg/dbg.hpp"
 #include "peripheral/uart.hpp"
 #include "system/system.hpp"
 
