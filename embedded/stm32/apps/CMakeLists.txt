@@ -20,3 +20,14 @@ add_stm32_executable(tim_demo
     SOURCES tim_demo.cpp
     LINK_LIBS stm32_common
 )
+
+add_stm32_executable(uart_echo
+    SOURCES uart_echo.cpp
+    LINK_LIBS stm32_common
+)
+
+
+add_stm32_executable(dbg_demo
+    SOURCES dbg_demo.cpp
+    LINK_LIBS stm32_common
+)
